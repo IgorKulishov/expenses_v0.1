@@ -13,7 +13,7 @@ let loginRepository = class HomeRepository {
 					console.error(`Error connectiong to "login" collection : ${err}`);
 					reject(err);
 				} else {
-					db.collection('login').find({name: this.loginQuery.name}).toArray((err, results) => {
+					db.collection('login').find({name: this.loginQuery.name, password: this.loginQuery.password}).toArray((err, results) => {
 						if(err) {
 							console.error(`Error fetching from "login" collection: ${err}`);
 							reject(err);

@@ -1,7 +1,6 @@
 let HomeRepository = require('../repositories/home.repository');
 
 let homeService = (req, res) => {
-	let homeRepository = new HomeRepository();
 	new HomeRepository().pageResults
 		.then((results) => {
 			console.log(`Data from connectiong DB: ${results}`);
